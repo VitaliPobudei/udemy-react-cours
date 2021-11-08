@@ -1,7 +1,10 @@
+import { useMemo } from "react";
 import "./Card.css";
 
-function Card() {
-  return <div className="card"></div>;
+function Card({ className, children }) {
+  const classes = useMemo(() => `card ${className}`, [className]);
+
+  return <div className={classes}>{children}</div>;
 }
 
 export default Card;
