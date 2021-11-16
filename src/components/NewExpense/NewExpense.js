@@ -3,14 +3,13 @@ import ExpenseForm from "./ExpenseForm";
 import "./ExpenseForm.css";
 import "./NewExpense.css";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
       id: Math.random().toString(),
     };
-    console.log(expenseData);
-    console.log();
+    props.onAddExpense(expenseData);
   };
 
   return (
